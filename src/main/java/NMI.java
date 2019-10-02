@@ -10,7 +10,7 @@ public class NMI {
     private double centroidX;
     private double centroidY;
     private double NMIValue;
-    double[] a;
+    private double[] a;
     public NMI(){
 
     }
@@ -41,7 +41,10 @@ public class NMI {
                     centroidX += i * a[0];
                 }
             }
-            centroidX/=getMass();
+            if(getMass() != 0){
+                centroidX/=getMass();
+            }
+            else return 0;
         }
         return centroidX;
     }
@@ -55,7 +58,10 @@ public class NMI {
                     centroidY += j * a[0];
                 }
             }
-            centroidY/=getMass();
+            if(getMass() != 0){
+                centroidY/=getMass();
+            }
+            else return 0;
         }
         return centroidY;
     }
@@ -75,22 +81,5 @@ public class NMI {
             NMIValue /= (double)(img.height()*img.width());
         }
         return NMIValue;
-    }
-
-    public void goNMI(){
-        System.out.println("Welcome to OpenCV " + Core.VERSION);
-        Mat img = Imgcodecs.imread("C:\\Users\\19093\\Desktop\\003.png",Imgcodecs.IMREAD_GRAYSCALE);
-        //imshow("img", img);
-        //waitKey(0);
-        //Imgproc.circle(img, new Point(200,300),40,new Scalar(255,0,0),2);
-        //Imgproc.circle(img, new Point(200,300),80,new Scalar(0,255,0),5);
-        for(int i = 100; i < 200; i ++){
-            for(int j = 100; j < 200; j ++){
-                img.put(i,j,100);
-            }
-        }
-        HighGui.namedWindow("image", HighGui.WINDOW_AUTOSIZE);
-        HighGui.imshow("image", img);
-        HighGui.waitKey();
     }
 }
