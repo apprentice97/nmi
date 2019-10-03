@@ -8,3 +8,4 @@
 ![image](https://github.com/xueweidongdong/nmi/blob/master/picture/%E5%AE%9E%E9%AA%8C%E6%88%AA%E5%9B%BE1.png)
 ![image](https://github.com/xueweidongdong/nmi/blob/master/picture/%E5%AE%9E%E9%AA%8C%E6%88%AA%E5%9B%BE2.png)
 ![image](https://github.com/xueweidongdong/nmi/blob/master/picture/%E5%AE%9E%E9%AA%8C%E6%88%AA%E5%9B%BE0.png)
+![image](https://github.com/xueweidongdong/nmi/blob/master/picture/%E5%AE%9E%E9%AA%8C%E6%88%AA%E5%9B%BE4.png)
