@@ -1,14 +1,8 @@
 
 
 import org.opencv.core.*;
-import org.opencv.imgcodecs.Imgcodecs;
-
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-import static org.opencv.highgui.HighGui.imshow;
-import static org.opencv.highgui.HighGui.waitKey;
+import java.util.Scanner;
 
 public class Main{
     static{
@@ -21,51 +15,58 @@ public class Main{
     {
         return new File(path).list();
     }
-
-    public static void main(String[] args) {
-        String path = "C:\\Users\\19093\\Desktop\\nmiTest\\";
-        String [] fileName = getFileName(path);
-        img = new Mat[fileName.length];
-        for(int i = 0; i < fileName.length; i ++){
-            img[i] = Imgcodecs.imread(path+fileName[i],Imgcodecs.IMREAD_GRAYSCALE);
-        }
-        double arr1[], arr2[];
-        interval = 32;
-        arr1 = new NMISequence(img[0],interval).getNMISequence();
-        for(int i = 0; i < fileName.length; i ++){
-            arr2 = new NMISequence(img[i],interval).getNMISequence();
-            System.out.println(fileName[0] + "和" + fileName[i] + "的相关度Corr:" + getCorr(arr1,arr2));
-        }
+    private static void showMenu(){
+        System.out.println();
+        System.out.println("#################################################");
+        System.out.println("##    请选择服务                                 ##");
+        System.out.println("##    1.比较两个图片的相似度                      ##");
+        System.out.println("##    2.查找相似图片                             ##");
+        System.out.println("##    3.退出程序                                 ##");
     }
 
-    /*
-     检索时,提取待检索图像的规范化 NMI 特征序列,
-     与图 像特征信息库中的序列进行相关性比较,
-      根据比较结果输出检 索结果。
-      相关性比较时, 采用 Pearson 积矩相关公式。
-     */
-
-    public static double getCorr(double[] arr1, double[] arr2){
-            double numerator = 0, denominator;
-            double average1 = 0, average2 = 0;
-            for(int i = 0; i < arr1.length; i ++){
-                average1 += arr1[i];
-                average2 += arr2[i];
+    private static String getFilename(String address){
+        int index = address.length() - 1;
+        String ret = "";
+        while(index!=0){
+            if(address.charAt(index) == 92){
+                break;
             }
-            average1 /= arr1.length * 1.0;
-            average2 /= arr2.length * 1.0;
-            for(int i = 0; i < arr1.length; i ++){
-                numerator += (arr1[i] - average1) * (arr2[i] - average2);
+            else{
+                ret = address.charAt(index) + ret;
             }
-            double tmp1 = 0,tmp2 = 0;
-            for(int i = 0; i < arr1.length; i ++){
-                tmp1 += (arr1[i] - average1) * (arr1[i] - average1);
-                tmp2 += (arr2[i] - average2) * (arr2[i] - average2);
+            index--;
+        }
+        return ret;
+    }
+    public static void main(String[] args) {
+        int server = 1;
+        String address1, address2;
+        int interval;
+        Scanner scanner = new Scanner(System.in);
+        while(true){
+            showMenu();
+            server = scanner.nextInt();
+            if(server == 1){
+                address1 = scanner.next();
+                address2 = scanner.next();
+                interval = scanner.nextInt();
+                System.out.println(getFilename(address1) + "和" +getFilename(address2)+ "的相似度为："+ImagesCorr.getImagesCorr(address1,address2,interval));
+                System.out.println("\n计算结束");
             }
-            tmp1 = Math.sqrt(tmp1);
-            tmp2 = Math.sqrt(tmp2);
-            denominator = tmp1 * tmp2;
-            return numerator / denominator;
+            else if(server == 2){
+                address1 = scanner.next();
+                address2 = scanner.next();
+                interval = scanner.nextInt();
+                System.out.println("在文件夹"+address2+"中与"+getFilename(address1)+"相似的图像有：");
+                SeekForImage seekForImage = new SeekForImage(address1,address2,interval);
+                seekForImage.run();
+                System.out.println("\n计算结束");
+            }
+            else if(server == 3){
+                System.out.println("\n欢迎下次使用！");
+                    break;
+            }
+        }
     }
 
 }
