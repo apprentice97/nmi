@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="internship">
+    <output-path>$PROJECT_DIR$/out/artifacts/internship</output-path>
+    <root id="archive" name="internship.jar">
+      <element id="module-output" name="internship" />
+      <element id="library" level="project" name="opencv-4001" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
