@@ -7,20 +7,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b1ea65e-2a88-44a5-a7ea-0292d506db98" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/internship.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/internship_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/internship_jar/internship.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/internship_jar/opencv-400.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ImagesCorr.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ImagesCorr.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/NMI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/NMI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/NMISequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/NMISequence.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SeekForImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SeekForImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/visual_interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/visual_interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/MyWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/MyWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/SeekForImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SeekForImage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/visual_interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/visual_interface.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +47,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../java/helloxwd" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />

@@ -28,7 +28,8 @@ public class SeekForImage {
         return new File(path).list();
     }
 
-    public void run(){
+    public String run(){
+        String result = "";
         String[] fileName = getFileName(this.address2);
         Mat[] mat = new Mat[fileName.length+1];
         mat[0] = Imgcodecs.imread(this.address1,Imgcodecs.IMREAD_GRAYSCALE);
@@ -45,12 +46,14 @@ public class SeekForImage {
             if(Math.abs(corr) >= this.threshold){
                 //System.out.println("目标图像与图像" + fileName[i] + "的相似度为：" + corr + ",可以认为是同一个物体");
                 System.out.print(fileName[i]+" ");
+                result = result + address2 + fileName[i] + "\n";
                 if(++count % 3 == 0) System.out.println();
             }
             else{
                 //System.out.println("目标图像与图像" + fileName[i] + "的相似度为：" + corr + ",可以认为不是同一个物体");
             }
         }
+        return result;
     }
 
     /*
